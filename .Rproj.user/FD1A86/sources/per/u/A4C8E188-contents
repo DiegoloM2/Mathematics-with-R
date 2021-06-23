@@ -1,0 +1,11 @@
+#This is the project for the course: Mathematics for Data Science and AI using R. 
+
+library(datasets)
+
+data <- as.data.frame(longley)
+
+plot(longley$Employed, longley$GNP)
+
+for (i in range 1:7){
+  print(i)
+}

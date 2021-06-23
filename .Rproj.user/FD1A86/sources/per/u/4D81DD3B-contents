@@ -1,0 +1,34 @@
+#Linear regression using Gradient Descent. 
+
+#Generate data and fit model: 
+
+set.seed(1234) 
+
+x <- rnorm(n = 500)
+y <- 5*x + rnorm(n = 500)
+
+plot(x = x, y = y)
+
+perfect.model <- lm(y ~ x)# a0 = -0,0552, a1 = 5.076
+
+#Now, we do a linear regression from the gradient descent perspective: 
+x <- matrix(cbind(1, x))
+
+#Now we define the error function: 
+error <- function(beta) {
+  sum((x %*% beta - y)^2)
+}
+
+
+#Now we define partial derivatives for a0 and a1: 
+del.a0 <- function(a0, a1) {
+  sum(-y + (a1*x+a0)) * (2/length(x))
+}
+
+del.a1 <- function(a0, a1) {
+  sum()
+}
+
+
+
+
